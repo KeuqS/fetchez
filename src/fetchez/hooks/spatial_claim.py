@@ -35,11 +35,17 @@ class SpatialClaimHook(FetchHook):
     name = "spatial-claim"
     meta_aliases = ["spatial_claim"]
     meta_stage = "manifest"
-    meta_category = "manifest-filter"
+    meta_category = "metadata"
     meta_desc = (
         "Resolve authoritative source footprints by priority while preserving "
         "partial lower-priority coverage."
     )
+    meta_effects = [
+        "modifies-entries",
+        "consumes-entries",
+        "creates-artifact",
+        "filters-entries",
+    ]
 
     def __init__(
         self,

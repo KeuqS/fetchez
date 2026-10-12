@@ -35,6 +35,7 @@ class FocusSink(FetchHook):
     meta_stage = "collection"  # post
     meta_category = "pipeline"
     meta_aliases = ["focus_sink"]
+    meta_effects = ["modifies-entries", "modifies-artifact", "filters-entries"]
 
     def __init__(self, target=None, **kwargs):
         super().__init__(**kwargs)
@@ -94,6 +95,7 @@ class StashEntries(FetchHook):
     meta_stage = "post"
     meta_category = "pipeline"
     meta_aliases = ["stash_entries"]
+    meta_effects = ["consumes-entries", "modifies-entries"]
 
     def __init__(self, key="default", **kwargs):
         super().__init__(**kwargs)
@@ -123,6 +125,7 @@ class RestoreEntries(FetchHook):
     meta_stage = "post"
     meta_category = "pipeline"
     meta_aliases = ["restore_entries"]
+    meta_effects = ["modifies-entries", "creates-entries"]
 
     def __init__(self, key="default", merge=False, **kwargs):
         super().__init__(**kwargs)

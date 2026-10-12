@@ -29,9 +29,10 @@ class LocalizeCacheHook(FetchHook):
     name = "localize-cache"
     meta_stage = "collection"
     meta_domain = "System"
-    meta_category = "Pipeline"
+    meta_category = "pipeline"
     meta_desc = "Copies or symlinks entry results into a specific local directory."
     meta_aliases = ["localize_cache"]
+    meta_effects = ["consumes-entries", "modifies-entries", "modifies-artifact"]
 
     def __init__(self, target_dir: str = ".", symlink: bool = False, **kwargs):
         super().__init__(**kwargs)
