@@ -64,8 +64,8 @@ def detectors_group():
     multiple=True,
     help="Filter by provider (repeat to include multiple providers).",
 )
-def list_data_types(group_by, search, provider):
-    """List all available built-in and local data types."""
+def list_detectors(group_by, search, provider):
+    """List all available built-in and local detectors."""
 
     registry = search_detectors(search)
     registry = filter_registry(
