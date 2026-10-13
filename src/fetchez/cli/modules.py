@@ -80,7 +80,7 @@ def module_search(term):
 @click.option("--agency", multiple=True, help="Filter results by agency.")
 @click.option("--region", multiple=True, help="Filter results by region.")
 @click.option("--resolution", multiple=True, help="Filter results by resolution.")
-@click.option("--lisence", multiple=True, help="Filter results by license.")
+@click.option("--license", multiple=True, help="Filter results by license.")
 def module_list(group_by, search, provider, agency, region, resolution, license):
     """List all available modules grouped by category."""
 
